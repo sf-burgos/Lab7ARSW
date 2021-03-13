@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blueprints</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css" />
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+</head>
+<body  onLoad="app.init()" >
+<div class="wrapper">
+    <div class="items">
+        <h2>Blueprints</h2>
+    </div>
+    <div class="items">
+        <div>
+            <input id="name" type="search" value="" placeholder="Author"/>
+            <input onclick="buscarAuthor(name.value)"  class="btn" type="button" value="Get Blueprints"/>
+        </div>
+    </div>
+    <div class="item1">
+        <h3 id="author">Author's blueprints</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Blueprint name</th>
+                <th>Number of points</th>
+                <th>Open</th>
+            </tr>
+            </thead>
+            <tbody id="res"/>
+        </table>
+        <h3 id="total">Total user points: 0</h3>
+        <div>
+            <input onclick="crearBlueprint()" id="crearBlueprint" style="visibility: hidden;" class="btn" type="button" value="Create new blueprint" />
+        </div>
+        <input id="save" onclick="saveBp()" style="visibility: hidden;" class="btnSave" type="button" value="Save/Update"/>
+        <input id="delete" onclick="deleteBp()" style="visibility: hidden;" class="btnDelete" type="button" value="Delete"/>
+    </div>
+    <div class="item2">
+        <h3 id="drawing">Current blueprint</h3>
+        <canvas style="position: absolute;border:2px solid #000000;touch-action:none" width="150" height="150" id="canvas" />
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="Tablas.js"></script>
+</html>
